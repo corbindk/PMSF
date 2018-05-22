@@ -726,22 +726,22 @@ function gymLabel(item) {
         } else {
             var raidEgg = ''
             if (copyrightSafe === false) {
-	        if (item['raid_level'] <= 2) {
-                raidEgg = 'normal'
+            if (item['raid_level'] <= 2) {
+                    raidEgg = 'normal'
                 } else if (item['raid_level'] <= 4) {
-                raidEgg = 'rare'
+                    raidEgg = 'rare'
                 } else {
-                raidEgg = 'legendary'
-                    }
-	    } else {
-		if (item['raid_level'] <= 2) {
-                raidEgg = 'safe_normal'
+                    raidEgg = 'legendary'
+                }
+        } else {
+                if (item['raid_level'] <= 2) {
+                    raidEgg = 'safe_normal'
                 } else if (item['raid_level'] <= 4) {
-                raidEgg = 'safe_rare'
+                    raidEgg = 'safe_rare'
                 } else {
                     raidEgg = 'safe_legendary'
                 }
-	    }
+        }
             raidIcon = '<img src="static/raids/egg_' + raidEgg + '.png">'
         }
     }
@@ -1126,13 +1126,13 @@ function getGymMarkerIcon(item) {
             return '<div style="position:relative;">' +
                 '<img src="static/forts/' + Store.get('gymMarkerStyle') + '/' + teamStr + '.png" style="width:55px;height:auto;"/>' +
                 '<img src="static/raids/egg_' + raidEgg + '.png" style="width:30px;height:auto;position:absolute;top:8px;right:12px;"/>' +
-	        exIcon +
+            exIcon +
                 '</div>'
-	} else {
+        } else {
             return '<div style="position:relative;">' +
                 '<img src="static/forts/' + Store.get('gymMarkerStyle') + '/' + teamStr + '.png" style="width:55px;height:auto;"/>' +
                 '<img src="static/raids/egg_safe_' + raidEgg + '.png" style="width:30px;height:auto;position:absolute;top:8px;right:12px;"/>' +
-	        exIcon +
+            exIcon +
                 '</div>'
         }
     } else {
@@ -1178,22 +1178,22 @@ function setupGymMarker(item) {
         } else {
             var raidEgg = ''
             if (copyrightSafe === false) {
-	        if (item['raid_level'] <= 2) {
-                raidEgg = 'normal'
+            if (item['raid_level'] <= 2) {
+                    raidEgg = 'normal'
                 } else if (item['raid_level'] <= 4) {
-                raidEgg = 'rare'
+                    raidEgg = 'rare'
                 } else {
-                raidEgg = 'legendary'
-                    }
-	    } else {
-		if (item['raid_level'] <= 2) {
-                raidEgg = 'safe_normal'
+                    raidEgg = 'legendary'
+                }
+        } else {
+        if (item['raid_level'] <= 2) {
+                    raidEgg = 'safe_normal'
                 } else if (item['raid_level'] <= 4) {
-                raidEgg = 'safe_rare'
+                    raidEgg = 'safe_rare'
                 } else {
                     raidEgg = 'safe_legendary'
                 }
-	    }
+        }
             icon = 'static/raids/egg_' + raidEgg + '.png'
             checkAndCreateSound()
         }
@@ -1257,22 +1257,22 @@ function updateGymMarker(item, marker) {
                 checkAndCreateSound()
                 var raidEgg = ''
                 if (copyrightSafe === false) {
-	            if (item['raid_level'] <= 2) {
-                    raidEgg = 'normal'
+                if (item['raid_level'] <= 2) {
+                        raidEgg = 'normal'
                     } else if (item['raid_level'] <= 4) {
-                    raidEgg = 'rare'
+                        raidEgg = 'rare'
                     } else {
-                    raidEgg = 'legendary'
+                        raidEgg = 'legendary'
                     }
-	        } else {
-		    if (item['raid_level'] <= 2) {
-                    raidEgg = 'safe_normal'
+            } else {
+            if (item['raid_level'] <= 2) {
+                        raidEgg = 'safe_normal'
                     } else if (item['raid_level'] <= 4) {
-                    raidEgg = 'safe_rare'
+                        raidEgg = 'safe_rare'
                     } else {
                         raidEgg = 'safe_legendary'
                     }
-	        }
+            }
                 icon = 'static/raids/egg_' + raidEgg + '.png'
             }
             sendNotification(title, text, icon, item['latitude'], item['longitude'])
@@ -3303,22 +3303,22 @@ function showGymDetails(id) { // eslint-disable-line no-unused-vars
             } else {
                 var raidEgg = ''
                 if (copyrightSafe === false) {
-		    if (result['raid_level'] <= 2) {
+            if (result['raid_level'] <= 2) {
                         raidEgg = 'normal'
                     } else if (result['raid_level'] <= 4) {
                         raidEgg = 'rare'
                     } else {
                         raidEgg = 'legendary'
                     }
-		} else {
-		    if (result['raid_level'] <= 2) {
+        } else {
+            if (result['raid_level'] <= 2) {
                         raidEgg = 'safe_normal'
                     } else if (result['raid_level'] <= 4) {
                         raidEgg = 'safe_rare'
                     } else {
                         raidEgg = 'safe_legendary'
                     }
-	        }
+            }
                 raidIcon = '<img src="static/raids/egg_' + raidEgg + '.png">'
             }
         }
@@ -3544,29 +3544,29 @@ function generateRaidBossList() {
     var data = '<div class="pokemon-list raid-submission">'
     data += '<input type="hidden" name="pokemonId" value="">'
     if (copyrightSafe === false) {
-    data += '<span class="pokemon-icon-sprite" data-value="egg_1" data-label="Level 1" onclick="pokemonRaidFilter(event);"><span class="egg_1 inner-bg" style="background: url(\'static/raids/egg_normal.png\');background-size:100%"></span><span class="egg-number">1</span></span>'
+        data += '<span class="pokemon-icon-sprite" data-value="egg_1" data-label="Level 1" onclick="pokemonRaidFilter(event);"><span class="egg_1 inner-bg" style="background: url(\'static/raids/egg_normal.png\');background-size:100%"></span><span class="egg-number">1</span></span>'
     } else {
-    data += '<span class="pokemon-icon-sprite" data-value="egg_1" data-label="Level 1" onclick="pokemonRaidFilter(event);"><span class="egg_1 inner-bg" style="background: url(\'static/raids/egg_safe_normal.png\');background-size:100%"></span><span class="egg-number">1</span></span>'
+        data += '<span class="pokemon-icon-sprite" data-value="egg_1" data-label="Level 1" onclick="pokemonRaidFilter(event);"><span class="egg_1 inner-bg" style="background: url(\'static/raids/egg_safe_normal.png\');background-size:100%"></span><span class="egg-number">1</span></span>'
     }
     if (copyrightSafe === false) {
-    data += '<span class="pokemon-icon-sprite" data-value="egg_2" data-label="Level 2" onclick="pokemonRaidFilter(event);"><span class="egg_2 inner-bg" style="background: url(\'static/raids/egg_normal.png\');background-size:100%"></span><span class="egg-number">2</span></span>'
+        data += '<span class="pokemon-icon-sprite" data-value="egg_2" data-label="Level 2" onclick="pokemonRaidFilter(event);"><span class="egg_2 inner-bg" style="background: url(\'static/raids/egg_normal.png\');background-size:100%"></span><span class="egg-number">2</span></span>'
     } else {
-    data += '<span class="pokemon-icon-sprite" data-value="egg_2" data-label="Level 2" onclick="pokemonRaidFilter(event);"><span class="egg_2 inner-bg" style="background: url(\'static/raids/egg_safe_normal.png\');background-size:100%"></span><span class="egg-number">2</span></span>'
+        data += '<span class="pokemon-icon-sprite" data-value="egg_2" data-label="Level 2" onclick="pokemonRaidFilter(event);"><span class="egg_2 inner-bg" style="background: url(\'static/raids/egg_safe_normal.png\');background-size:100%"></span><span class="egg-number">2</span></span>'
     }
     if (copyrightSafe === false) {
-    data += '<span class="pokemon-icon-sprite" data-value="egg_3" data-label="Level 3" onclick="pokemonRaidFilter(event);"><span class="egg_3 inner-bg" style="background: url(\'static/raids/egg_rare.png\');background-size:100%"></span><span class="egg-number">3</span></span>'
+        data += '<span class="pokemon-icon-sprite" data-value="egg_3" data-label="Level 3" onclick="pokemonRaidFilter(event);"><span class="egg_3 inner-bg" style="background: url(\'static/raids/egg_rare.png\');background-size:100%"></span><span class="egg-number">3</span></span>'
     } else {
-    data += '<span class="pokemon-icon-sprite" data-value="egg_3" data-label="Level 3" onclick="pokemonRaidFilter(event);"><span class="egg_3 inner-bg" style="background: url(\'static/raids/egg_safe_rare.png\');background-size:100%"></span><span class="egg-number">3</span></span>'
+        data += '<span class="pokemon-icon-sprite" data-value="egg_3" data-label="Level 3" onclick="pokemonRaidFilter(event);"><span class="egg_3 inner-bg" style="background: url(\'static/raids/egg_safe_rare.png\');background-size:100%"></span><span class="egg-number">3</span></span>'
     }
     if (copyrightSafe === false) {
-    data += '<span class="pokemon-icon-sprite" data-value="egg_4" data-label="Level 4" onclick="pokemonRaidFilter(event);"><span class="egg_4 inner-bg" style="background: url(\'static/raids/egg_rare.png\');background-size:100%"></span><span class="egg-number">4</span></span>'
+        data += '<span class="pokemon-icon-sprite" data-value="egg_4" data-label="Level 4" onclick="pokemonRaidFilter(event);"><span class="egg_4 inner-bg" style="background: url(\'static/raids/egg_rare.png\');background-size:100%"></span><span class="egg-number">4</span></span>'
     } else {
-    data += '<span class="pokemon-icon-sprite" data-value="egg_4" data-label="Level 4" onclick="pokemonRaidFilter(event);"><span class="egg_4 inner-bg" style="background: url(\'static/raids/egg_safe_rare.png\');background-size:100%"></span><span class="egg-number">4</span></span>'
+        data += '<span class="pokemon-icon-sprite" data-value="egg_4" data-label="Level 4" onclick="pokemonRaidFilter(event);"><span class="egg_4 inner-bg" style="background: url(\'static/raids/egg_safe_rare.png\');background-size:100%"></span><span class="egg-number">4</span></span>'
     }
     if (copyrightSafe === false) {
-    data += '<span class="pokemon-icon-sprite" data-value="egg_5" data-label="Level 5" onclick="pokemonRaidFilter(event);"><span class="egg_5 inner-bg" style="background: url(\'static/raids/egg_legendary.png\');background-size:100%"></span><span class="egg-number">4</span></span>'
+        data += '<span class="pokemon-icon-sprite" data-value="egg_5" data-label="Level 5" onclick="pokemonRaidFilter(event);"><span class="egg_5 inner-bg" style="background: url(\'static/raids/egg_legendary.png\');background-size:100%"></span><span class="egg-number">4</span></span>'
     } else {
-    data += '<span class="pokemon-icon-sprite" data-value="egg_5" data-label="Level 5" onclick="pokemonRaidFilter(event);"><span class="egg_5 inner-bg" style="background: url(\'static/raids/egg_safe_legendary.png\');background-size:100%"></span><span class="egg-number">5</span></span>'
+        data += '<span class="pokemon-icon-sprite" data-value="egg_5" data-label="Level 5" onclick="pokemonRaidFilter(event);"><span class="egg_5 inner-bg" style="background: url(\'static/raids/egg_safe_legendary.png\');background-size:100%"></span><span class="egg-number">5</span></span>'
     }
     boss.forEach(function (element) {
         var j = Math.floor(element / 28)
