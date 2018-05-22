@@ -726,14 +726,14 @@ function gymLabel(item) {
         } else {
             var raidEgg = ''
             if (copyrightSafe === false) {
-            if (item['raid_level'] <= 2) {
+                if (item['raid_level'] <= 2) {
                     raidEgg = 'normal'
                 } else if (item['raid_level'] <= 4) {
                     raidEgg = 'rare'
                 } else {
                     raidEgg = 'legendary'
                 }
-        } else {
+            } else {
                 if (item['raid_level'] <= 2) {
                     raidEgg = 'safe_normal'
                 } else if (item['raid_level'] <= 4) {
@@ -741,7 +741,7 @@ function gymLabel(item) {
                 } else {
                     raidEgg = 'safe_legendary'
                 }
-        }
+            }
             raidIcon = '<img src="static/raids/egg_' + raidEgg + '.png">'
         }
     }
@@ -1178,22 +1178,22 @@ function setupGymMarker(item) {
         } else {
             var raidEgg = ''
             if (copyrightSafe === false) {
-            if (item['raid_level'] <= 2) {
+                if (item['raid_level'] <= 2) {
                     raidEgg = 'normal'
                 } else if (item['raid_level'] <= 4) {
                     raidEgg = 'rare'
                 } else {
                     raidEgg = 'legendary'
                 }
-        } else {
-        if (item['raid_level'] <= 2) {
+            } else {
+                if (item['raid_level'] <= 2) {
                     raidEgg = 'safe_normal'
                 } else if (item['raid_level'] <= 4) {
                     raidEgg = 'safe_rare'
                 } else {
                     raidEgg = 'safe_legendary'
                 }
-        }
+            }
             icon = 'static/raids/egg_' + raidEgg + '.png'
             checkAndCreateSound()
         }
@@ -1257,22 +1257,22 @@ function updateGymMarker(item, marker) {
                 checkAndCreateSound()
                 var raidEgg = ''
                 if (copyrightSafe === false) {
-                if (item['raid_level'] <= 2) {
+                    if (item['raid_level'] <= 2) {
                         raidEgg = 'normal'
                     } else if (item['raid_level'] <= 4) {
                         raidEgg = 'rare'
                     } else {
                         raidEgg = 'legendary'
                     }
-            } else {
-            if (item['raid_level'] <= 2) {
+                } else {
+                    if (item['raid_level'] <= 2) {
                         raidEgg = 'safe_normal'
                     } else if (item['raid_level'] <= 4) {
                         raidEgg = 'safe_rare'
                     } else {
                         raidEgg = 'safe_legendary'
                     }
-            }
+                }
                 icon = 'static/raids/egg_' + raidEgg + '.png'
             }
             sendNotification(title, text, icon, item['latitude'], item['longitude'])
@@ -3303,22 +3303,22 @@ function showGymDetails(id) { // eslint-disable-line no-unused-vars
             } else {
                 var raidEgg = ''
                 if (copyrightSafe === false) {
-            if (result['raid_level'] <= 2) {
+                    if (result['raid_level'] <= 2) {
                         raidEgg = 'normal'
                     } else if (result['raid_level'] <= 4) {
                         raidEgg = 'rare'
                     } else {
                         raidEgg = 'legendary'
                     }
-        } else {
-            if (result['raid_level'] <= 2) {
+                } else {
+                    if (result['raid_level'] <= 2) {
                         raidEgg = 'safe_normal'
                     } else if (result['raid_level'] <= 4) {
                         raidEgg = 'safe_rare'
                     } else {
                         raidEgg = 'safe_legendary'
                     }
-            }
+                }
                 raidIcon = '<img src="static/raids/egg_' + raidEgg + '.png">'
             }
         }
