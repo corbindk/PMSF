@@ -278,6 +278,12 @@ $sendRaidData = false;                                              // Send Raid
 //-----------------------------------------------------
 $hideIfManual = false;
 $noManualRaids = false;						   						// Enable/Disable ManualRaids permanently ( Comment this line if you want to use the block below )
+//-----------------------------------------------------
+// Ingress
+//-----------------------------------------------------
+$noIngressPortals = true;
+$enableIngressPortals = false;
+
 $noDiscordSubmitLogChannel = true;                                  // Send webhooks to discord channel upon submission
 $submitMapUrl = '';
 $discordSubmitLogChannelUrl = 'https://discordapp.com/api/webhooks/<yourCHANNELhere>';  // Sends gym/pokestop submit & pokestop rename directly to discord

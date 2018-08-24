@@ -432,6 +432,29 @@ if ( $blockIframe ) {
             }
             ?>
             <?php
+            if ( ! $noIngressPortals ) {
+                ?>
+                <h3><?php echo i8ln( 'Ingress' ); ?></h3>
+		<div>
+                <?php
+                if ( ! $noIngressPortals ) {
+                    echo '<div class="form-control switch-container">
+                    <h3>' . i8ln( 'Portals' ) . '</h3>
+                    <div class="onoffswitch">
+                        <input id="portals-switch" type="checkbox" name="portals-switch"
+                               class="onoffswitch-checkbox" checked>
+                        <label class="onoffswitch-label" for="portals-switch">
+                            <span class="switch-label" data-on="On" data-off="Off"></span>
+                            <span class="switch-handle"></span>
+                        </label>
+                    </div>
+                </div>';
+		} ?>
+                </div>
+                <?php
+            }
+            ?>
+            <?php
             if ( ! $noRaids || ! $noGyms ) {
                 ?>
                 <h3><?php echo i8ln( 'Gym/Raid' ); ?></h3>
@@ -1463,6 +1486,8 @@ if ( $blockIframe ) {
     var noRenamePokestops = <?php echo $noRenamePokestops === true ? 'true' : 'false' ?>;
     var noConvertPokestops = <?php echo $noConvertPokestops === true ? 'true' : 'false' ?>;
     var noWhatsappLink = <?php echo $noWhatsappLink === true ? 'true' : 'false' ?>;
+    var noIngressPortals = <?php echo $noIngressPortals === true ? 'true' : 'false' ?>;
+    var enableIngressPortals = <?php echo $noIngressPortals ? 'false' : $enableIngressPortals ?>;
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 <script src="static/dist/js/map.common.min.js"></script>

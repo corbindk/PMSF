@@ -259,7 +259,7 @@ class Monocle_Alternate extends Monocle
             $params[':lastUpdated'] = $tstamp;
         }
         if ($exEligible === "true") {
-            $conds[] = "(parkid IS NOT NULL OR sponsor > 0)";
+            $conds[] = "(park IS NOT NULL OR sponsor > 0)";
         }
 
         return $this->query_gyms($conds, $params);
@@ -596,5 +596,58 @@ class Monocle_Alternate extends Monocle
         }
         return $data;
     }
+    public function get_ingress_portals($swLat, $swLng, $neLat, $neLng, $tstamp  = 0, $oSwLat = 0, $oSwLng = 0, $oNeLat = 0, $oNeLng = 0)
+    {
+        $conds = array();
+        $params = array();
 
+        $conds[] = "lat > :swLat AND lon > :swLng AND lat < :neLat AND lon < :neLng";
+        $params[':swLat'] = $swLat;
+        $params[':swLng'] = $swLng;
+        $params[':neLat'] = $neLat;
+        $params[':neLng'] = $neLng;
+
+        if ($oSwLat != 0) {
+            $conds[] = "NOT (lat > :oswLat AND lon > :oswLng AND lat < :oneLat AND lon < :oneLng)";
+            $params[':oswLat'] = $oSwLat;
+            $params[':oswLng'] = $oSwLng;
+            $params[':oneLat'] = $oNeLat;
+            $params[':oneLng'] = $oNeLng;
+        }
+        if ($tstamp > 0) {
+           $conds[] = "updated > :lastUpdated";
+           $params[':lastUpdated'] = $tstamp;
+	}
+
+        return $this->query_ingress_portals($conds, $params);
+    }
+
+    public function query_ingress_portals($conds, $params)
+    {
+        global $db;
+
+        $query = "SELECT external_id,
+        lat,
+        lon,
+        name,
+        url
+        FROM ingress_portals
+        WHERE :conditions";
+
+        $query = str_replace(":conditions", join(" AND ", $conds), $query);
+        $portals = $db->query($query, $params)->fetchAll(\PDO::FETCH_ASSOC);
+
+        $data = array();
+        $i = 0;
+        foreach ($portals as $portal) {
+            $portal["external_id"] = intval($portal["external_id"]);
+            $portal["lat"] = floatval($portal["lat"]);
+            $portal["lon"] = floatval($portal["lon"]);
+            $data[] = $portal;
+
+            unset($portals[$i]);
+            $i++;
+        }
+        return $data;
+    }
 }
